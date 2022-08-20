@@ -22,9 +22,9 @@ function validateInput(testInput) {
    if(testInput === "" || testInput === 0) {
     return "Empty";
    } else if (isNaN(testInput)) {
-    return "Not a number";
+    return "Not a Number";
    } else {
-    return "Is a number";
+    return "Is a Number";
    }
 }
 
@@ -38,31 +38,31 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
     alert("Please fill in all fields.");
    }
-   else if (validateInput(pilot) === "Is a number" || validateInput(copilot) === "Is a number" || validateInput(fuelLevel) === "Not a number" || validateInput(cargoLevel) === "Not a number"){
+   else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number"){
     alert("Please make sure to use valid information for all fields.");
    }
    else if (fuelLevel < 10000) {
-    pilotStatus.innerHTML = `Pilot ${pilot} ready`;
-    copilotStatus.innerHTML = `Copilot ${copilot} ready`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = 'visible';
     fuelStatus.innerHTML = "There is not enough fuel for the journey ahead";
-    launchStatus.innerHTML = "Shuttle not ready for launch";
-    launchStatus.style.color = 'red';
+    launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+    launchStatus.style.color = 'rgb(199, 37, 78)';
    }
    else if (cargoLevel > 10000) {
-    pilotStatus.innerHTML = `Pilot ${pilot} ready`;
-    copilotStatus.innerHTML = `Copilot ${copilot} ready`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = 'visible';
-    cargoStatus.innerHTML = "There is to much mass for the shuttle to take off"
-    launchStatus.innerHTML = "Shuttle not ready for launch";
-    launchStatus.style.color = 'red';
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch"
+    launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+    launchStatus.style.color = 'rgb(199, 37, 78)';
    }
    else {
-    pilotStatus.innerHTML = `Pilot ${pilot} ready`;
-    copilotStatus.innerHTML = `Copilot ${copilot} ready`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = 'visible';
-    launchStatus.innerHTML = "Shuttle is ready for launch";
-    launchStatus.style.color = 'green';
+    launchStatus.innerHTML = "Shuttle is Ready for Launch";
+    launchStatus.style.color = 'rgb(65, 159, 106)';
    }
 
 }
